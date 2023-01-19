@@ -2,9 +2,9 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-light bg-light">
+    <nav className="navbar navbar-dark bg-dark mb-4">
       <div className="container-fluid">
-        <span className="navbar-brand mb-0 h1">Todo App</span>
+        <h1 className="text-white">Navbar</h1>
       </div>
     </nav>
   );
