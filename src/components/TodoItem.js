@@ -10,6 +10,7 @@ const TodoItem = ({
 }) => {
   let [isEditable, setIsEditable] = useState(false);
   let [editedText, setEditedText] = useState(todoitem);
+  let [displayBtn, setDisplayBtn] = useState(true);
 
   const handleUpdate = (todo) => {
     setIsEditable(true);
@@ -46,23 +47,30 @@ const TodoItem = ({
     }
   };
 
+  const toggleButtonDisplay = () => {
+    if (displayBtn && !isEditable) {
+      return (
+        <div className="col">
+          <button
+            className="btn btn-outline-primary btn-sm mx-2"
+            onClick={() => handleUpdate(todoObj)}
+          >
+            update
+          </button>
+          <button
+            className="btn btn-outline-danger btn-sm"
+            onClick={() => deleteTodoItem(index)}
+          >
+            delete
+          </button>
+        </div>
+      );
+    }
+  };
   return (
     <div className="row">
       {updateText()}
-      <div className="col">
-        <button
-          className="btn btn-outline-primary btn-sm mx-2"
-          onClick={() => handleUpdate(todoObj)}
-        >
-          update
-        </button>
-        <button
-          className="btn btn-outline-danger btn-sm"
-          onClick={() => deleteTodoItem(index)}
-        >
-          delete
-        </button>
-      </div>
+      {toggleButtonDisplay()}
     </div>
   );
 };
