@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ todoCount }) => {
   const style = {
     backgroundColor: "#e3f2fd",
   };
@@ -9,6 +9,8 @@ const Navbar = () => {
     <nav className="navbar   mb-3 " style={style}>
       <div className="container-fluid">
         <h1 className="">Todo App</h1>
+
+        <div>Total todo:{todoCount} </div>
       </div>
     </nav>
   );

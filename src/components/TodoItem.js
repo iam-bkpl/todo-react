@@ -33,16 +33,16 @@ const TodoItem = ({
       return (
         <div className="col">
           <input type="text" value={editedText} onChange={handleInput} />
-          <button className="btn btn-primary m-2" onClick={handleEdit}>
+          <button className="btn btn-outline-primary m-2" onClick={handleEdit}>
             Done
           </button>
-          <button className="btn btn-danger m-2" onClick={handleCancel}>
+          <button className="btn btn-outline-danger m-2" onClick={handleCancel}>
             Cancel
           </button>
         </div>
       );
     } else {
-      return <p className="col"> {todoitem}</p>;
+      return <p className="col">{` ${index + 1} -  ${todoitem}`}</p>;
     }
   };
 
@@ -51,13 +51,13 @@ const TodoItem = ({
       {updateText()}
       <div className="col">
         <button
-          className="btn btn-primary"
+          className="btn btn-outline-primary btn-sm mx-2"
           onClick={() => handleUpdate(todoObj)}
         >
           update
         </button>
         <button
-          className="btn btn-danger"
+          className="btn btn-outline-danger btn-sm"
           onClick={() => deleteTodoItem(index)}
         >
           delete

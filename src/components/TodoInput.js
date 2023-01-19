@@ -12,7 +12,11 @@ const TodoInput = (props) => {
   return (
     <div className="container mx-3">
       <form onSubmit={handleSubmit}>
+        <br />
         <input
+          className="p-2 rounded-pill border border-primary"
+          value={text}
+          placeholder="Enter Your todo here"
           type="text"
           onChange={(e) => {
             setText(e.target.value);

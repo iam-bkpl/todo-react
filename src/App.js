@@ -30,7 +30,7 @@ const App = () => {
   };
   return (
     <div>
-      <Navbar />
+      <Navbar todoCount={count} />
       <div className="container">
         <TodoInput onSubmit={onSubmit} />
         <TodoList
