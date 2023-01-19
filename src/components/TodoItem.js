@@ -34,10 +34,16 @@ const TodoItem = ({
       return (
         <div className="col">
           <input type="text" value={editedText} onChange={handleInput} />
-          <button className="btn btn-outline-primary m-2" onClick={handleEdit}>
+          <button
+            className="btn btn-outline-primary mx-2 btn-sm"
+            onClick={handleEdit}
+          >
             Done
           </button>
-          <button className="btn btn-outline-danger m-2" onClick={handleCancel}>
+          <button
+            className="btn btn-outline-danger mx-2 btn-sm"
+            onClick={handleCancel}
+          >
             Cancel
           </button>
         </div>
@@ -58,7 +64,7 @@ const TodoItem = ({
             update
           </button>
           <button
-            className="btn btn-outline-danger btn-sm"
+            className="btn btn-outline-danger btn-sm mx-0"
             onClick={() => deleteTodoItem(index)}
           >
             delete
