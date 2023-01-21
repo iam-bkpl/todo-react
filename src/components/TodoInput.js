@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 
-const TodoInput = (props) => {
+const TodoInput = ({
+  onSubmit,
+  placeholderText,
+  setPlaceholder,
+  setSearchText,
+}) => {
   const [text, setText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.onSubmit(text);
+    onSubmit(text);
     setText("");
   };
 
@@ -16,7 +21,7 @@ const TodoInput = (props) => {
         <input
           className="p-2 rounded-pill border border-primary"
           value={text}
-          placeholder="Enter Your todo here"
+          placeholder={placeholderText}
           type="text"
           onChange={(e) => {
             setText(e.target.value);

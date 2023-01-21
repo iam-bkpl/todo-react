@@ -7,6 +7,8 @@ import TodoList from "./components/TodoList";
 const App = () => {
   const [todo, setTodo] = useState([]);
   let [count, setCount] = useState(0);
+  const [placeholderText, setPlaceholderText] = useState("Enter you todo");
+  const [searchText, setSearchText] = useState("");
 
   const onSubmit = (new_todo) => {
     setTodo([
@@ -30,9 +32,14 @@ const App = () => {
   };
   return (
     <div>
-      <Navbar todoCount={count} />
+      <Navbar todoCount={count} setPlaceholderText={setPlaceholderText} />
       <div className="container">
-        <TodoInput onSubmit={onSubmit} />
+        <TodoInput
+          onSubmit={onSubmit}
+          placeholderText={placeholderText}
+          setPlaceholderText={setPlaceholderText}
+          setSearchText={setSearchText}
+        />
         <TodoList
           todolist={todo}
           setTodo={setTodo}
