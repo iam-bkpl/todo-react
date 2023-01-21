@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <nav className="navbar fixed-bottom navbar-light " style={style}>
+    <nav className="navbar fixed-bottom navbar-light p-3" style={style}>
       <div className="container-fluid">
         <p className="m-auto ">iambkpl</p>
       </div>

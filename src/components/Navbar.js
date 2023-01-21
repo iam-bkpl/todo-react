@@ -9,8 +9,8 @@ const Navbar = ({ todoCount }) => {
     <nav className="navbar   mb-3 " style={style}>
       <div className="container-fluid">
         <h1 className="">Todo App</h1>
-
         <div>Total todo:{todoCount} </div>
+        <buton className="btn btn-outline-primary">search</buton>
       </div>
     </nav>
   );
