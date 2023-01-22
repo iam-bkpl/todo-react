@@ -9,6 +9,7 @@ const App = () => {
   let [count, setCount] = useState(0);
   const [placeholderText, setPlaceholderText] = useState("Enter you todo");
   const [searchText, setSearchText] = useState("");
+  const [btnState, setBtnState] = useState(false);
 
   const onSubmit = (new_todo) => {
     setTodo([
@@ -30,15 +31,21 @@ const App = () => {
     const newTodo = (oldTodo[index].text = editedTodo);
     setTodo(oldTodo);
   };
+
   return (
     <div>
-      <Navbar todoCount={count} setPlaceholderText={setPlaceholderText} />
+      <Navbar
+        todoCount={count}
+        setPlaceholderText={setPlaceholderText}
+        setBtnState={setBtnState}
+        searchText={searchText}
+      />
       <div className="container">
         <TodoInput
           onSubmit={onSubmit}
           placeholderText={placeholderText}
-          setPlaceholderText={setPlaceholderText}
           setSearchText={setSearchText}
+          btnState={btnState}
         />
         <TodoList
           todolist={todo}

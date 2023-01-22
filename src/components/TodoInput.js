@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 
-const TodoInput = ({
-  onSubmit,
-  placeholderText,
-  setPlaceholder,
-  setSearchText,
-}) => {
+const TodoInput = ({ onSubmit, placeholderText, setSearchText, btnState }) => {
   const [text, setText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(text);
-    setText("");
+    if (!btnState) {
+      onSubmit(text);
+      setText("");
+    } else {
+      setSearchText(text);
+    }
   };
 
   return (
