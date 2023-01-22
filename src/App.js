@@ -1,8 +1,14 @@
 import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// components
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
+// accounts
+import Login from "./components/accounts/Login";
+import Register from "./components/accounts/Register";
 
 const App = () => {
   const [todo, setTodo] = useState([]);
@@ -33,7 +39,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <BrowserRouter>
       <Navbar
         todoCount={count}
         setPlaceholderText={setPlaceholderText}
@@ -55,7 +61,12 @@ const App = () => {
         />
       </div>
       <Footer />
-    </div>
+      <Routes>
+        <Route exact path="/" component={TodoList} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
