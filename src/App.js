@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NoPage from "./components/NoPage";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import NoPage from "./components/NoPage";
 
 // components
-import Layout from "./components/Layout";
+// import Layout from "./components/Layout";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 
 // accounts
-import Login from "./components/accounts/Login";
-import Register from "./components/accounts/Register";
+// import Login from "./components/accounts/Login";
+// import Register from "./components/accounts/Register";
 
 const App = () => {
   const [todo, setTodo] = useState([]);
@@ -42,38 +42,30 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter>
+    <div>
       {/* <Layout /> */}
-      {/* <Navbar
+      <Navbar
         todoCount={count}
         setPlaceholderText={setPlaceholderText}
         setBtnState={setBtnState}
         searchText={searchText}
-      /> */}
-      {/* <div className="container"> */}
-      {/* <TodoInput
+      />
+      <div className="container">
+        <TodoInput
           onSubmit={onSubmit}
           placeholderText={placeholderText}
           setSearchText={setSearchText}
           btnState={btnState}
-        /> */}
-      {/* <TodoList
+        />
+        <TodoList
           todolist={todo}
           setTodo={setTodo}
           editTodoItem={editTodoItem}
           deleteTodoItem={deleteTodoItem}
-        /> */}
-      {/* </div> */}
-      {/* <Footer /> */}
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Navbar />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        />
+      </div>
+      <Footer />
+    </div>
   );
 };
 
