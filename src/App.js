@@ -43,7 +43,6 @@ const App = () => {
 
   return (
     <div>
-      {/* <Layout /> */}
       <Navbar
         todoCount={count}
         setPlaceholderText={setPlaceholderText}
