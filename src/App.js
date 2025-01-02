@@ -12,7 +12,7 @@ import TodoList from "./components/TodoList";
 // accounts
 // import Login from "./components/accounts/Login";
 // import Register from "./components/accounts/Register";
-
+// minor change
 const App = () => {
   const [todo, setTodo] = useState([]);
   let [count, setCount] = useState(0);
